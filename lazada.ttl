@@ -1,0 +1,30 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix s: <http://schema.org/> .
+@prefix db: <https://dbpedia.org/resource/> .
+
+ex:beli-smart-tv a gr:SomeItems;
+  gr:category "beli-smart-tv"^^xsd:string;
+  gr:hasBrand ex:Toshiba .
+
+ex:Toshiba a gr:Brand;
+    gr:name "Toshiba"^^xsd:string;
+    s:Corporation db:Toshiba.
+
+ex:Harga a gr:UnitPriceSpecification;
+  gr:hasCurrencyValue "2499000"^^xsd:currency.
+
+ex:TOSHIBA_Smart_HD_LED_TV_32 a gr:ProductOrServiceModel;
+  gr:name "TOSHIBA Smart HD LED TV 32"^^xsd:string;
+  gr:hasBrand ex:Toshiba;
+  gr:hasPriceSpecification ex:Harga;
+  foaf:page <https://www.lazada.co.id/products/toshiba-smart-hd-led-tv-32.html>;
+  s:aggregateRating [ a s:AggregateRating;
+                         s:ratingValue "4"^^xsd:integer;
+                         s:reviewCount "8"^^xsd:integer;
+                          ];
+  s:dateCreated "2019-10-02"^^xsd:date.
